@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:snmp-action="uri:oozie:snmp-action:0.1"
+           elementFormDefault="qualified"
+           targetNamespace="uri:oozie:snmp-action:0.1">
+
+  <xs:complexType name="SNMP_TYPE">
+    <xs:sequence>
+      <xs:element name="nmsHost" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="nmsPort" type="xs:int" minOccurs="0" maxOccurs="1" default="162"/>
+      <xs:element name="communityString" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="payload" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="snmp" type="snmp-action:SNMP_TYPE"/>
+</xs:schema>
